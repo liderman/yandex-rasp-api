@@ -30,7 +30,7 @@ func (c *CopyrightDataFetcher) Fetch(url string) (resp io.ReadCloser, err error)
 }
 
 func TestCopyright(t *testing.T) {
-	api := NewYandexRapsApi("TEST_TOKEN")
+	api := NewYandexRapsApi("TEST_APIKEY")
 	api.Fetcher = &CopyrightDataFetcher{}
 	reps, err := api.Copyright()
 	if err != nil {

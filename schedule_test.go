@@ -36,7 +36,7 @@ func (s *ScheduleDataFetcher) Fetch(url string) (resp io.ReadCloser, err error) 
 }
 
 func TestSchedule(t *testing.T) {
-	api := NewYandexRapsApi("TEST_TOKEN")
+	api := NewYandexRapsApi("TEST_APIKEY")
 	api.Fetcher = &ScheduleDataFetcher{}
 	reps, err := api.Schedule(map[string]string{
 		"station":         "s9600213",

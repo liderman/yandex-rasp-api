@@ -48,7 +48,7 @@ func (c *SearchDataFetcher) Fetch(url string) (resp io.ReadCloser, err error) {
 }
 
 func TestSearch(t *testing.T) {
-	api := NewYandexRapsApi("TEST_TOKEN")
+	api := NewYandexRapsApi("TEST_APIKEY")
 	api.Fetcher = &SearchDataFetcher{}
 	reps, err := api.Search(map[string]string{
 		"from":  "c146",

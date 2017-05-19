@@ -24,7 +24,7 @@ func (c *CarrierDataFetcher) Fetch(url string) (resp io.ReadCloser, err error) {
 }
 
 func TestCarrier(t *testing.T) {
-	api := NewYandexRapsApi("TEST_TOKEN")
+	api := NewYandexRapsApi("TEST_APIKEY")
 	api.Fetcher = &CarrierDataFetcher{}
 	reps, err := api.Carrier(map[string]string{
 		"lang":   "ru_RU",

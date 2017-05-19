@@ -8,7 +8,7 @@ import (
 )
 
 type YandexRapsApi struct {
-	token   string
+	apikey  string
 	log     LoggerInterface
 	Fetcher DataFetcher
 }
@@ -35,9 +35,9 @@ func (d *HttpDataFetcher) Fetch(url string) (resp io.ReadCloser, err error) {
 }
 
 // NewYandexRapsApi creates a new instance YandexRapsApi.
-func NewYandexRapsApi(token string) *YandexRapsApi {
+func NewYandexRapsApi(apikey string) *YandexRapsApi {
 	return &YandexRapsApi{
-		token:   token,
+		apikey:  apikey,
 		Fetcher: &HttpDataFetcher{},
 	}
 }
@@ -52,6 +52,8 @@ func (y *YandexRapsApi) getJson(path string, args map[string]string, v interface
 		return err
 	}
 	params := url.Values{}
+	params.Add("format", "json")
+	params.Add("apikey", y.apikey)
 	for k, v := range args {
 		if v == "" {
 			continue

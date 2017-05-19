@@ -27,7 +27,7 @@ func (n *NearestStationsDataFetcher) Fetch(url string) (resp io.ReadCloser, err 
 }
 
 func TestNearestStations(t *testing.T) {
-	api := NewYandexRapsApi("TEST_TOKEN")
+	api := NewYandexRapsApi("TEST_APIKEY")
 	api.Fetcher = &NearestStationsDataFetcher{}
 	reps, err := api.NearestStations(map[string]string{
 		"lang":   "ru_RU",

@@ -30,7 +30,7 @@ func (c *ThreadDataFetcher) Fetch(url string) (resp io.ReadCloser, err error) {
 }
 
 func TestThread(t *testing.T) {
-	api := NewYandexRapsApi("TEST_TOKEN")
+	api := NewYandexRapsApi("TEST_APIKEY")
 	api.Fetcher = &ThreadDataFetcher{}
 	reps, err := api.Thread(map[string]string{
 		"uid":          "NN-324_0_c9_12",
