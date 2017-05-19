@@ -25,12 +25,16 @@ type HttpDataFetcher struct{}
 
 func (d *HttpDataFetcher) Fetch(url string) (resp io.ReadCloser, err error) {
 	req, err := http.NewRequest("GET", url, nil)
-	req.Header.Set("Accept-Encoding", "gzip, deflate")
+	if err != nil {
+		return
+	}
+	client := &http.Client{}
+	httpResp, err := client.Do(req)
 	if err != nil {
 		return
 	}
 
-	resp = req.Body
+	resp = httpResp.Body
 	return
 }
 
