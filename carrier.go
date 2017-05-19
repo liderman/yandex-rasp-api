@@ -17,6 +17,12 @@ type Carrier struct {
 	Email    string   `json:"email"`
 }
 
+type ShortCarrier struct {
+	Code  int    `json:"code"`
+	Codes Codes  `json:"codes"`
+	Title string `json:"title"`
+}
+
 func (y *YandexRapsApi) Carrier(params map[string]string) (response CarrierResponse, err error) {
 	err = y.getJson("v3.0/carrier/", params, &response)
 	return

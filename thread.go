@@ -21,12 +21,6 @@ type ThreadCard struct {
 	ExpressType      string           `json:"express_type"`
 }
 
-type TransportSubtype struct {
-	Color string `json:"color"`
-	Code  string `json:"code"`
-	Title string `json:"title"`
-}
-
 type Stop struct {
 	Arrival   string        `json:"arrival"`
 	Departure string        `json:"departure"`

@@ -24,56 +24,21 @@ type Schedule struct {
 }
 
 type ScheduleThread struct {
-	Carrier          CarrierItem       `json:"carrier"`
-	TransportType    string            `json:"transport_type"`
-	Uid              string            `json:"uid"`
-	Title            string            `json:"title"`
-	Vehicle          string            `json:"vehicle"`
-	Number           string            `json:"number"`
-	ShortTitle       string            `json:"short_title"`
-	ExpressType      string            `json:"express_type"`
-	TransportSubtype map[string]string `json:"transport_subtype"`
-	ThreadMethodLink string            `json:"thread_method_link"`
-}
-
-type ThreadItem struct {
-	Carrier          Carrier           `json:"carrier"`
-	TransportType    string            `json:"transport_type"`
-	Uid              string            `json:"uid"`
-	Title            string            `json:"title"`
-	Vehicle          string            `json:"vehicle"`
-	Number           string            `json:"number"`
-	ShortTitle       string            `json:"short_title"`
-	ExpressType      string            `json:"express_type"`
-	TransportSubtype map[string]string `json:"transport_subtype"`
-	ThreadMethodLink string            `json:"thread_method_link"`
-}
-
-type CarrierItem struct {
-	Code  int    `json:"code"`
-	Codes Codes  `json:"codes"`
-	Title string `json:"title"`
-}
-
-type Codes struct {
-	Icao   string `json:"icao"`
-	Sirena string `json:"sirena"`
-	Iata   string `json:"iata"`
+	Carrier          ShortCarrier     `json:"carrier"`
+	TransportType    string           `json:"transport_type"`
+	Uid              string           `json:"uid"`
+	Title            string           `json:"title"`
+	Vehicle          string           `json:"vehicle"`
+	Number           string           `json:"number"`
+	ShortTitle       string           `json:"short_title"`
+	ExpressType      string           `json:"express_type"`
+	TransportSubtype TransportSubtype `json:"transport_subtype"`
+	ThreadMethodLink string           `json:"thread_method_link"`
 }
 
 type Direction struct {
 	Code  string `json:"code"`
 	Title string `json:"title"`
-}
-
-type Station struct {
-	Code          string `json:"code"`
-	StationType   string `json:"station_type"`
-	Title         string `json:"title"`
-	PopularTitle  string `json:"popular_title"`
-	ShortTitle    string `json:"short_title"`
-	TransportType string `json:"transport_type"`
-	Type          string `json:"type"`
 }
 
 func (y *YandexRapsApi) Schedule(params map[string]string) (response ScheduleResponse, err error) {

@@ -104,10 +104,10 @@ func TestSearch(t *testing.T) {
 				ShortTitle:       "Симферополь — Москва",
 				ThreadMethodLink: "api.rasp.yandex.net/v3/thread/?date=2017-05-18&uid=NN-324_0_c9_12",
 				ExpressType:      "",
-				TransportSubtype: map[string]string{
-					"color": "",
-					"code":  "",
-					"title": "",
+				TransportSubtype: TransportSubtype{
+					Color: "",
+					Code:  "",
+					Title: "",
 				},
 			},
 			DeparturePlatform: "",
@@ -165,10 +165,10 @@ func TestSearch(t *testing.T) {
 				ShortTitle:       "Симферополь — Москва",
 				ThreadMethodLink: "api.rasp.yandex.net/v3/thread/?date=2017-05-18&uid=SU-1627_0_c26_547",
 				ExpressType:      "",
-				TransportSubtype: map[string]string{
-					"color": "",
-					"code":  "",
-					"title": "",
+				TransportSubtype: TransportSubtype{
+					Color: "",
+					Code:  "",
+					Title: "",
 				},
 			},
 			DeparturePlatform: "",

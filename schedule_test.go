@@ -59,7 +59,7 @@ func TestSchedule(t *testing.T) {
 				ExceptDays: "16, 17, 18, 21, 22, 23, 24, 25, 28, 29, 30, 31 мая, 1 июня",
 				Direction:  "на Москву",
 				Thread: ScheduleThread{
-					Carrier: CarrierItem{
+					Carrier: ShortCarrier{
 						Code: 162,
 						Codes: Codes{
 							Icao:   "",
@@ -74,10 +74,10 @@ func TestSchedule(t *testing.T) {
 					Vehicle:       "",
 					Number:        "7273",
 					ShortTitle:    "а/п Шереметьево — М-Белорусск.",
-					TransportSubtype: map[string]string{
-						"color": "#FF7F44",
-						"code":  "suburban",
-						"title": "Пригородный поезд",
+					TransportSubtype: TransportSubtype{
+						Color: "#FF7F44",
+						Code:  "suburban",
+						Title: "Пригородный поезд",
 					},
 					ExpressType: "aeroexpress",
 				},
@@ -93,7 +93,7 @@ func TestSchedule(t *testing.T) {
 				ExceptDays: "16, 17, 18, 21, 22, 23, 24, 25, 28, 29, 30, 31 мая, 1 июня",
 				Direction:  "на Москву",
 				Thread: ScheduleThread{
-					Carrier: CarrierItem{
+					Carrier: ShortCarrier{
 						Code: 162,
 						Codes: Codes{
 							Icao:   "",
@@ -108,10 +108,10 @@ func TestSchedule(t *testing.T) {
 					Vehicle:       "",
 					Number:        "7275",
 					ShortTitle:    "а/п Шереметьево — М-Белорусск.",
-					TransportSubtype: map[string]string{
-						"color": "#FF7F44",
-						"code":  "suburban",
-						"title": "Пригородный поезд",
+					TransportSubtype: TransportSubtype{
+						Color: "#FF7F44",
+						Code:  "suburban",
+						Title: "Пригородный поезд",
 					},
 					ExpressType: "aeroexpress",
 				},

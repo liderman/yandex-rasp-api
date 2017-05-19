@@ -24,16 +24,16 @@ type Segment struct {
 }
 
 type Thread struct {
-	Carrier          SearchCarrier     `json:"carrier"`
-	TransportType    string            `json:"transport_type"`
-	Uid              string            `json:"uid"`
-	Title            string            `json:"title"`
-	Vehicle          string            `json:"vehicle"`
-	Number           string            `json:"number"`
-	ShortTitle       string            `json:"short_title"`
-	ExpressType      string            `json:"express_type"`
-	TransportSubtype map[string]string `json:"transport_subtype"`
-	ThreadMethodLink string            `json:"thread_method_link"`
+	Carrier          SearchCarrier    `json:"carrier"`
+	TransportType    string           `json:"transport_type"`
+	Uid              string           `json:"uid"`
+	Title            string           `json:"title"`
+	Vehicle          string           `json:"vehicle"`
+	Number           string           `json:"number"`
+	ShortTitle       string           `json:"short_title"`
+	ExpressType      string           `json:"express_type"`
+	TransportSubtype TransportSubtype `json:"transport_subtype"`
+	ThreadMethodLink string           `json:"thread_method_link"`
 }
 
 type SearchCarrier struct {
